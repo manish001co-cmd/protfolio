@@ -4,11 +4,32 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const yearEl = document.getElementById('year');
   if(yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // mobile nav toggle
+  // Mobile Nav Drawer Toggle & Overlay Backdrop
   const navToggle = document.getElementById('nav-toggle');
   const nav = document.getElementById('nav');
-  if(navToggle && nav){
-    navToggle.addEventListener('click', ()=> nav.classList.toggle('show'))
+  const navOverlay = document.getElementById('nav-overlay');
+
+  if (navToggle && nav && navOverlay) {
+    const toggleMenu = () => {
+      const isOpen = nav.classList.toggle('show');
+      navToggle.classList.toggle('open', isOpen);
+      navOverlay.classList.toggle('show', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    };
+
+    const closeMenu = () => {
+      nav.classList.remove('show');
+      navToggle.classList.remove('open');
+      navOverlay.classList.remove('show');
+      document.body.style.overflow = '';
+    };
+
+    navToggle.addEventListener('click', toggleMenu);
+    navOverlay.addEventListener('click', closeMenu);
+
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
   }
 
   // theme toggle
@@ -107,11 +128,65 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
   }
 
-  // close mobile menu when nav link is clicked
-  if (nav && navToggle) {
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('show');
+
+
+  // Scroll Reveal Animations using Intersection Observer
+  const revealElements = document.querySelectorAll('.reveal:not(.reveal-group .reveal)');
+  const revealGroups = document.querySelectorAll('.reveal-group');
+
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      } else {
+        entry.target.classList.remove('active');
+      }
+    });
+  }, observerOptions);
+
+  const groupObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const container = entry.target;
+      const children = container.querySelectorAll('.reveal');
+      if (entry.isIntersecting) {
+        container.classList.add('active');
+        children.forEach((child, index) => {
+          child.style.transitionDelay = `${index * 120}ms`;
+          child.classList.add('active');
+        });
+      } else {
+        container.classList.remove('active');
+        children.forEach(child => {
+          child.classList.remove('active');
+          child.style.transitionDelay = '';
+        });
+      }
+    });
+  }, observerOptions);
+
+  revealElements.forEach(el => revealObserver.observe(el));
+  revealGroups.forEach(group => groupObserver.observe(group));
+
+  // Scroll to Top visibility and click logic
+  const scrollTopBtn = document.getElementById('scroll-top');
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
     });
   }
