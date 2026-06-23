@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Portfolio Site (HTML, CSS, JavaScript)
 
 This is a minimal, responsive portfolio scaffold built with plain HTML, CSS, and JavaScript.
@@ -32,3 +33,6 @@ Replace the `your-username` placeholders with your GitHub username or your actua
 
 ## Note
 I used JavaScript for interactivity. If you meant Java (the JVM language), tell me and I can create a Java-based backend or JavaFX app instead.
+=======
+# protfolio
+>>>>>>> 90a4661a73bd945d32a6936799550b7c198acb2e
