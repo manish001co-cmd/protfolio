@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project Two — Gallery</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .project-hero {
+      padding: 40px
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px
+    }
+
+    .thumb {
+      height: 110px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #163347, #0b2633);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted)
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">← Back</a>
+    </div>
+  </header>
+  <main class="container project-hero">
+    <h2>Project Two — Gallery</h2>
+    <p>A simple responsive gallery layout (static demo).</p>
+    <div class="gallery">
+      <div class="thumb">1</div>
+      <div class="thumb">2</div>
+      <div class="thumb">3</div>
+      <div class="thumb">4</div>
+    </div>
+    <p style="margin-top:18px;color:var(--muted)">Code: <a href="https://github.com/your-username/project-two"
+        target="_blank" rel="noopener">GitHub repo</a></p>
+  </main>
+</body>
+
+</html>

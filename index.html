@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfolio — Manish Kumar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('portfolio-theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="logo">Manish Kumar</h1>
+            <nav id="nav" class="nav">
+                <a href="#about">About</a>   
+                <a href="#skills">Skills</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#projects">Projects</a>
+                <a href="#feedback">Feedback</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                        stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                        stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button id="nav-toggle" class="nav-toggle" aria-label="Toggle Menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container" id="home">
+            <div class="hero-content">
+                <h2>Hi, I'm <span class="accent">Manish</span></h2>
+                <p>I'm a front-end developer who builds clean, accessible, and responsive web experiences.</p>
+                <a class="btn" href="#projects">See my work</a>
+            </div>
+            <div class="hero-photo">
+                <img src="profile.png" alt="Manish Kumar Profile Photo">
+            </div>
+        </section>
+
+
+        <section class="about container" id="about">
+            <h3>About</h3>
+            <p>I build websites using HTML, CSS, and JavaScript. I enjoy solving problems and learning new technologies.
+            </p>
+        </section>
+
+
+        <section class="skills container" id="skills">
+            <h3>Skills</h3>
+            <ul class="skills-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Responsive Design</li>
+            </ul>
+        </section>
+
+        <section class="certificates container" id="certificates">
+            <h3>Certificates</h3>
+            <div class="certificate-grid">
+                <article class="certificate-card" data-pdf="Certificate/Google cloud.pdf" data-title="Google Cloud - Introduction to Generative AI Studio">
+                    <div class="cert-icon-container">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="cert-content">
+                        <span class="cert-issuer">Google Cloud</span>
+                        <h4 class="cert-title">Introduction to Generative AI Studio</h4>
+                        <p class="cert-desc">Training on Large Language Models, GenAI concepts, and Google Cloud AI Tools.</p>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn small cert-view-btn">View Certificate</button>
+                    </div>
+                </article>
+
+                <article class="certificate-card" data-pdf="Certificate/IIT DELHI Offer leter_page-0001.pdf" data-title="IIT Delhi - Campus Ambassador Program 2025-26">
+                    <div class="cert-icon-container">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3a1 1 0 0 1 1-1h15v20H5a1 1 0 0 1-1-1z"/>
+                        </svg>
+                    </div>
+                    <div class="cert-content">
+                        <span class="cert-issuer">eDC IIT Delhi</span>
+                        <h4 class="cert-title">Campus Ambassador Program 2025–26</h4>
+                        <p class="cert-desc">Leadership role fostering entrepreneurship and leading campus engagement activities.</p>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn small cert-view-btn">View Certificate</button>
+                    </div>
+                </article>
+
+                <article class="certificate-card" data-pdf="Certificate/AI-ML.pdf" data-title="Artificial Intelligence & Machine Learning Certificate">
+                    <div class="cert-icon-container">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <div class="cert-content">
+                        <span class="cert-issuer">Specialization Course</span>
+                        <h4 class="cert-title">Artificial Intelligence & Machine Learning</h4>
+                        <p class="cert-desc">Comprehensive certification covering machine learning pipelines, deep learning foundations, and algorithms.</p>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn small cert-view-btn">View Certificate</button>
+                    </div>
+                </article>
+
+                <article class="certificate-card" data-pdf="Certificate/NSDC-frontend-certificate.pdf" data-title="NSDC - Frontend Development Certificate">
+                    <div class="cert-icon-container">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <div class="cert-content">
+                        <span class="cert-issuer">NSDC India</span>
+                        <h4 class="cert-title">Frontend Development</h4>
+                        <p class="cert-desc">National skill certification focused on advanced HTML, CSS, JavaScript, and modern responsive layouts.</p>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn small cert-view-btn">View Certificate</button>
+                    </div>
+                </article>
+
+                <article class="certificate-card" data-pdf="Certificate/Reliance Foundation.pdf" data-title="Reliance Foundation Scholarship Certificate">
+                    <div class="cert-icon-container">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <div class="cert-content">
+                        <span class="cert-issuer">Reliance Foundation</span>
+                        <h4 class="cert-title">Reliance Foundation Scholars</h4>
+                        <p class="cert-desc">Prestigious scholarship award recognizing academic excellence, innovation, and leadership.</p>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn small cert-view-btn">View Certificate</button>
+                    </div>
+                </article>
+
+                <article class="certificate-card" data-pdf="Certificate/TCS.pdf" data-title="TCS iON - Career Edge Digital Skills">
+                    <div class="cert-icon-container">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <div class="cert-content">
+                        <span class="cert-issuer">TCS iON</span>
+                        <h4 class="cert-title">Career Edge — Digital Skills</h4>
+                        <p class="cert-desc">Professional skills development program focusing on communication, collaboration, and IT readiness.</p>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn small cert-view-btn">View Certificate</button>
+                    </div>
+                </article>
+
+                <article class="certificate-card" data-pdf="Certificate/HP.pdf" data-title="HP LIFE Certificate">
+                    <div class="cert-icon-container">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <div class="cert-content">
+                        <span class="cert-issuer">HP LIFE</span>
+                        <h4 class="cert-title">HP LIFE Skill Certification</h4>
+                        <p class="cert-desc">Professional training covering key IT, management, and tech-entrepreneurship subjects.</p>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn small cert-view-btn">View Certificate</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+        <section class="projects container" id="projects">
+            <h3>Projects</h3>
+            <div class="cards">
+                <article class="card">
+                    <div class="card-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Git</span>
+                    </div>
+                    <h4>Git & GitHub Guide</h4>
+                    <p>A comprehensive, interactive study guide and documentation dashboard for mastering Git & GitHub
+                        workflows. Features dynamic navigation, instant search, and progress tracking.</p>
+                    <div class="card-actions">
+                        <a class="btn small" href="https://manish001co-cmd.github.io/Complete-Git-Github-guide/"
+                            target="_blank" rel="noopener">Demo</a>
+                        <a class="btn ghost small" href="https://github.com/manish001co-cmd/Complete-Git-Github-guide"
+                            target="_blank" rel="noopener">Code</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Transitions</span>
+                    </div>
+                    <h4>CSS Transition Timings</h4>
+                    <p>An interactive visual playground showcasing different CSS transition timing functions (linear,
+                        ease, ease-in, ease-out, ease-in-out) to compare animation speeds side-by-side.</p>
+                    <div class="card-actions">
+                        <a class="btn small" href="https://manish001co-cmd.github.io/transition-timing-function/"
+                            target="_blank" rel="noopener">Demo</a>
+                        <a class="btn ghost small" href="https://github.com/manish001co-cmd/transition-timing-function"
+                            target="_blank" rel="noopener">Code</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="feedback container" id="feedback">
+            <h3>Feedback</h3>
+            <form id="feedback-form">
+                <label>
+                    Name
+                    <input type="text" name="name" required>
+                </label>
+                <label>
+                    Email
+                    <input type="email" name="email" required>
+                </label>
+                <label>
+                    Feedback Message
+                    <textarea name="message" rows="5" required></textarea>
+                </label>
+                <button type="submit" class="btn">Submit Feedback</button>
+                <p id="feedback-form-status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-socials">
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-link linkedin" aria-label="LinkedIn">
+                    <img src="social media logo/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener" class="footer-social-link github" aria-label="GitHub">
+                    <img src="social media logo/github.png" alt="GitHub">
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-link facebook" aria-label="Facebook">
+                    <img src="social media logo/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-link instagram" aria-label="Instagram">
+                    <img src="social media logo/instagram.png" alt="Instagram">
+                </a>
+            </div>
+            <p>&copy; <span id="year"></span> Manish — Built with HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <!-- Certificate Viewer Modal -->
+    <div id="certificate-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal-backdrop"></div>
+        <div class="modal-wrapper">
+            <div class="modal-header">
+                <h4 id="modal-title">Certificate Viewer</h4>
+                <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="pdf-viewer-iframe" src="" title="Certificate PDF Viewer"></iframe>
+            </div>
+            <div class="modal-footer">
+                <a id="modal-download-link" href="" download class="btn small">Download PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Persistent Floating Social Sidebar -->
+    <aside class="social-sidebar" aria-label="Social Links Sidebar">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="sidebar-social-link linkedin" aria-label="LinkedIn">
+            <img src="social media logo/linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener" class="sidebar-social-link github" aria-label="GitHub">
+            <img src="social media logo/github.png" alt="GitHub">
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener" class="sidebar-social-link facebook" aria-label="Facebook">
+            <img src="social media logo/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="sidebar-social-link instagram" aria-label="Instagram">
+            <img src="social media logo/instagram.png" alt="Instagram">
+        </a>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
