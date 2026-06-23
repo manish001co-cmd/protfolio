@@ -17,8 +17,8 @@
     --accent-glow: rgba(139, 92, 246, 0.15);
     --glass: rgba(255, 255, 255, 0.02);
     --glass-hover: rgba(255, 255, 255, 0.05);
-    --header-bg: rgba(10, 14, 23, 0.75);
-    --header-border: rgba(255, 255, 255, 0.04);
+    --header-bg: rgba(42, 22, 81, 0.401);
+    --header-border: rgba(246, 12, 12, 0.04);
     --input-bg: rgba(255, 255, 255, 0.02);
     --input-border: rgba(255, 255, 255, 0.08);
     --input-focus-bg: rgba(255, 255, 255, 0.03);
@@ -75,7 +75,8 @@ body {
     color: var(--text);
     line-height: 1.6;
     position: relative;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+    padding-top: 80px;
 }
 
 h1,
@@ -95,13 +96,18 @@ h4 {
 
 /* Header */
 .site-header {
+    position: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: var(--header-bg);
+    border-bottom: 2px solid var(--header-border);
+
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    position: sticky;
-    top: 0;
-    background: var(--header-bg);
-    border-bottom: 1px solid var(--header-border);
-    z-index: 100;
 }
 
 .site-header .container {
@@ -138,7 +144,7 @@ h4 {
     width: 0;
     height: 2px;
     background-color: #3b82f6;
-    transition: 0.5s;
+    transition: width 0.5s ease;
 }
 
 .nav a:hover::after {
@@ -562,10 +568,10 @@ h4 {
     color: var(--text);
     font-family: var(--font-body);
     font-size: 0.95rem;
-    transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-                background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
@@ -1135,7 +1141,7 @@ h4 {
     transform: translateY(0);
 }
 
-    @media (max-width: 880px) {
+@media (max-width: 880px) {
     .scroll-top-btn {
         bottom: 16px;
         right: 16px;
