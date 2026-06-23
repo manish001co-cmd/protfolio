@@ -17,6 +17,13 @@
 </head>
 
 <body>
+    <!-- Ambient background glow elements -->
+    <div class="ambient-glow glow-1" aria-hidden="true"></div>
+    <div class="ambient-glow glow-2" aria-hidden="true"></div>
+
+    <!-- Mobile navigation overlay backdrop -->
+    <div id="nav-overlay" class="nav-overlay"></div>
+
     <header class="site-header">
         <div class="container">
             <h1 class="logo">Manish Kumar</h1>
@@ -46,7 +53,11 @@
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
-                <button id="nav-toggle" class="nav-toggle" aria-label="Toggle Menu">☰</button>
+                <button id="nav-toggle" class="nav-toggle" aria-label="Toggle Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
         </div>
     </header>
@@ -65,26 +76,73 @@
 
 
         <section class="about container" id="about">
-            <h3>About</h3>
-            <p>I build websites using HTML, CSS, and JavaScript. I enjoy solving problems and learning new technologies.
+            <h3 class="reveal">About</h3>
+            <p class="reveal">I build websites using HTML, CSS, and JavaScript. I enjoy solving problems and learning new technologies.
             </p>
         </section>
 
 
         <section class="skills container" id="skills">
-            <h3>Skills</h3>
-            <ul class="skills-list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Responsive Design</li>
-            </ul>
+            <h3 class="reveal">Skills</h3>
+            <div class="skills-grid reveal-group">
+                <div class="skills-category reveal">
+                    <h4>Frontend Core</h4>
+                    <ul class="category-list">
+                        <li>
+                            <svg class="skill-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            HTML5
+                        </li>
+                        <li>
+                            <svg class="skill-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            CSS3
+                        </li>
+                        <li>
+                            <svg class="skill-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            JavaScript (ES6+)
+                        </li>
+                    </ul>
+                </div>
+                <div class="skills-category reveal">
+                    <h4>Frameworks & Styling</h4>
+                    <ul class="category-list">
+                        <li>
+                            <svg class="skill-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            Responsive Design
+                        </li>
+                        <li>
+                            <svg class="skill-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            Tailwind CSS
+                        </li>
+                        <li>
+                            <svg class="skill-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+                            UI/UX Styling
+                        </li>
+                    </ul>
+                </div>
+                <div class="skills-category reveal">
+                    <h4>Tools & Version Control</h4>
+                    <ul class="category-list">
+                        <li>
+                            <svg class="skill-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            Git & GitHub
+                        </li>
+                        <li>
+                            <svg class="skill-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                            Command Line
+                        </li>
+                        <li>
+                            <svg class="skill-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"/><path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"/></svg>
+                            VS Code
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <section class="certificates container" id="certificates">
-            <h3>Certificates</h3>
-            <div class="certificate-grid">
-                <article class="certificate-card" data-pdf="Certificate/Google cloud.pdf" data-title="Google Cloud - Introduction to Generative AI Studio">
+            <h3 class="reveal">Certificates</h3>
+            <div class="certificate-grid reveal-group">
+                <article class="certificate-card reveal" data-pdf="Certificate/Google cloud.pdf" data-title="Google Cloud - Introduction to Generative AI Studio">
                     <div class="cert-icon-container">
                         <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
@@ -96,11 +154,14 @@
                         <p class="cert-desc">Training on Large Language Models, GenAI concepts, and Google Cloud AI Tools.</p>
                     </div>
                     <div class="cert-actions">
-                        <button class="btn small cert-view-btn">View Certificate</button>
+                        <button class="btn small cert-view-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            View Certificate
+                        </button>
                     </div>
                 </article>
 
-                <article class="certificate-card" data-pdf="Certificate/IIT DELHI Offer leter_page-0001.pdf" data-title="IIT Delhi - Campus Ambassador Program 2025-26">
+                <article class="certificate-card reveal" data-pdf="Certificate/IIT DELHI Offer leter_page-0001.pdf" data-title="IIT Delhi - Campus Ambassador Program 2025-26">
                     <div class="cert-icon-container">
                         <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3a1 1 0 0 1 1-1h15v20H5a1 1 0 0 1-1-1z"/>
@@ -112,11 +173,14 @@
                         <p class="cert-desc">Leadership role fostering entrepreneurship and leading campus engagement activities.</p>
                     </div>
                     <div class="cert-actions">
-                        <button class="btn small cert-view-btn">View Certificate</button>
+                        <button class="btn small cert-view-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            View Certificate
+                        </button>
                     </div>
                 </article>
 
-                <article class="certificate-card" data-pdf="Certificate/AI-ML.pdf" data-title="Artificial Intelligence & Machine Learning Certificate">
+                <article class="certificate-card reveal" data-pdf="Certificate/AI-ML.pdf" data-title="Artificial Intelligence & Machine Learning Certificate">
                     <div class="cert-icon-container">
                         <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
@@ -130,11 +194,14 @@
                         <p class="cert-desc">Comprehensive certification covering machine learning pipelines, deep learning foundations, and algorithms.</p>
                     </div>
                     <div class="cert-actions">
-                        <button class="btn small cert-view-btn">View Certificate</button>
+                        <button class="btn small cert-view-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            View Certificate
+                        </button>
                     </div>
                 </article>
 
-                <article class="certificate-card" data-pdf="Certificate/NSDC-frontend-certificate.pdf" data-title="NSDC - Frontend Development Certificate">
+                <article class="certificate-card reveal" data-pdf="Certificate/NSDC-frontend-certificate.pdf" data-title="NSDC - Frontend Development Certificate">
                     <div class="cert-icon-container">
                         <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="16 18 22 12 16 6"/>
@@ -147,11 +214,14 @@
                         <p class="cert-desc">National skill certification focused on advanced HTML, CSS, JavaScript, and modern responsive layouts.</p>
                     </div>
                     <div class="cert-actions">
-                        <button class="btn small cert-view-btn">View Certificate</button>
+                        <button class="btn small cert-view-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            View Certificate
+                        </button>
                     </div>
                 </article>
 
-                <article class="certificate-card" data-pdf="Certificate/Reliance Foundation.pdf" data-title="Reliance Foundation Scholarship Certificate">
+                <article class="certificate-card reveal" data-pdf="Certificate/Reliance Foundation.pdf" data-title="Reliance Foundation Scholarship Certificate">
                     <div class="cert-icon-container">
                         <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -163,11 +233,14 @@
                         <p class="cert-desc">Prestigious scholarship award recognizing academic excellence, innovation, and leadership.</p>
                     </div>
                     <div class="cert-actions">
-                        <button class="btn small cert-view-btn">View Certificate</button>
+                        <button class="btn small cert-view-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            View Certificate
+                        </button>
                     </div>
                 </article>
 
-                <article class="certificate-card" data-pdf="Certificate/TCS.pdf" data-title="TCS iON - Career Edge Digital Skills">
+                <article class="certificate-card reveal" data-pdf="Certificate/TCS.pdf" data-title="TCS iON - Career Edge Digital Skills">
                     <div class="cert-icon-container">
                         <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
@@ -181,11 +254,14 @@
                         <p class="cert-desc">Professional skills development program focusing on communication, collaboration, and IT readiness.</p>
                     </div>
                     <div class="cert-actions">
-                        <button class="btn small cert-view-btn">View Certificate</button>
+                        <button class="btn small cert-view-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            View Certificate
+                        </button>
                     </div>
                 </article>
 
-                <article class="certificate-card" data-pdf="Certificate/HP.pdf" data-title="HP LIFE Certificate">
+                <article class="certificate-card reveal" data-pdf="Certificate/HP.pdf" data-title="HP LIFE Certificate">
                     <div class="cert-icon-container">
                         <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
@@ -197,7 +273,10 @@
                         <p class="cert-desc">Professional training covering key IT, management, and tech-entrepreneurship subjects.</p>
                     </div>
                     <div class="cert-actions">
-                        <button class="btn small cert-view-btn">View Certificate</button>
+                        <button class="btn small cert-view-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            View Certificate
+                        </button>
                     </div>
                 </article>
             </div>
@@ -205,9 +284,9 @@
 
 
         <section class="projects container" id="projects">
-            <h3>Projects</h3>
-            <div class="cards">
-                <article class="card">
+            <h3 class="reveal">Projects</h3>
+            <div class="cards reveal-group">
+                <article class="card reveal">
                     <div class="card-tags">
                         <span class="tag">HTML</span>
                         <span class="tag">CSS</span>
@@ -219,12 +298,18 @@
                         workflows. Features dynamic navigation, instant search, and progress tracking.</p>
                     <div class="card-actions">
                         <a class="btn small" href="https://manish001co-cmd.github.io/Complete-Git-Github-guide/"
-                            target="_blank" rel="noopener">Demo</a>
+                            target="_blank" rel="noopener">
+                            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Demo
+                        </a>
                         <a class="btn ghost small" href="https://github.com/manish001co-cmd/Complete-Git-Github-guide"
-                            target="_blank" rel="noopener">Code</a>
+                            target="_blank" rel="noopener">
+                            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            Code
+                        </a>
                     </div>
                 </article>
-                <article class="card">
+                <article class="card reveal">
                     <div class="card-tags">
                         <span class="tag">HTML</span>
                         <span class="tag">CSS</span>
@@ -235,17 +320,23 @@
                         ease, ease-in, ease-out, ease-in-out) to compare animation speeds side-by-side.</p>
                     <div class="card-actions">
                         <a class="btn small" href="https://manish001co-cmd.github.io/transition-timing-function/"
-                            target="_blank" rel="noopener">Demo</a>
+                            target="_blank" rel="noopener">
+                            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Demo
+                        </a>
                         <a class="btn ghost small" href="https://github.com/manish001co-cmd/transition-timing-function"
-                            target="_blank" rel="noopener">Code</a>
+                            target="_blank" rel="noopener">
+                            <svg class="btn-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            Code
+                        </a>
                     </div>
                 </article>
             </div>
         </section>
 
         <section class="feedback container" id="feedback">
-            <h3>Feedback</h3>
-            <form id="feedback-form">
+            <h3 class="reveal">Feedback</h3>
+            <form id="feedback-form" class="reveal">
                 <label>
                     Name
                     <input type="text" name="name" required>
@@ -267,10 +358,10 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-socials">
-                <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-link linkedin" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/manish-kumar-3bb405322?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" class="footer-social-link linkedin" aria-label="LinkedIn">
                     <img src="social media logo/linkedin.png" alt="LinkedIn">
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener" class="footer-social-link github" aria-label="GitHub">
+                <a href="https://github.com/manish001co-cmd" target="_blank" rel="noopener" class="footer-social-link github" aria-label="GitHub">
                     <img src="social media logo/github.png" alt="GitHub">
                 </a>
                 <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-link facebook" aria-label="Facebook">
@@ -316,6 +407,13 @@
             <img src="social media logo/instagram.png" alt="Instagram">
         </a>
     </aside>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top-btn" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <script src="script.js"></script>
 </body>
